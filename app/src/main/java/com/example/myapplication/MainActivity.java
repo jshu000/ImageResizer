@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 String root = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS));
                 Log.d("jashwant23","root-"+root);
                 File myDir = new File(root + "/saved_images");
-                Log.d("jashwant","myDir-"+myDir);
+                Log.d("jashwantfe","myDir-"+myDir);
                 myDir.mkdirs();
                 Random generator = new Random();
                 int n = 10000;
