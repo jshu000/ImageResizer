@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 File myDir = new File(root + "/saved_images");
                 Log.d("jashwantfe","myDir-"+myDir);
                 myDir.mkdirs();
+
                 Random generator = new Random();
                 int n = 10000;
                 n = generator.nextInt(n);
