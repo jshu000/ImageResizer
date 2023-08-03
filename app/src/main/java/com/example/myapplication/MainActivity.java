@@ -10,6 +10,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         nm.setMinValue(0);
         nm.setMaxValue(100);
 
+        ImageView tv1;
+        final Bitmap[] bm = new Bitmap[1];
+        tv1= (ImageView) findViewById(R.id.imageView3);
+
 
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 n = generator.nextInt(n);
                 String fname = "Image-"+ n +".jpg";
                 File file = new File (myDir, fname);
+
                 if (file.exists ()) file.delete ();
                 try {
                     Log.d("jashwant","inside try");
@@ -55,13 +61,20 @@ public class MainActivity extends AppCompatActivity {
                     saveBm.compress(Bitmap.CompressFormat.JPEG, quality,out);
                     out.flush();
                     out.close();
+                    bm[0] = BitmapFactory.decodeFile(root+"/"+fname);
+                    Log.d("jashwant","inside bm-"+root+"/"+fname);
+
 
                 } catch (Exception e) {
+                    Log.d("jashwant","inside catch");
                     e.printStackTrace();
                 }
+                Bitmap bm = BitmapFactory.decodeFile(root+"/"+fname);
+                tv1.setImageBitmap(bm);
 
             }
         });
+
 
     }
 }
