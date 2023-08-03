@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int quality= nm.getValue();
                 String root = String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS));
-                Log.d("jashwant","root-"+root);
+                Log.d("jashwant23","root-"+root);
                 File myDir = new File(root + "/saved_images");
                 Log.d("jashwant","myDir-"+myDir);
                 myDir.mkdirs();
